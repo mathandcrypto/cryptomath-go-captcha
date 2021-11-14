@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:13
+    container_name: cryptomath-captcha-postgres
+    restart: always
+    env_file:
+      - ./configs/database/config.env
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  redis:
+    image: redis
+    container_name: cryptomath-captcha-redis
+    ports:
+      - '6379:6379'
+volumes:
+  pgdata:
