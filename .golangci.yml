@@ -1,0 +1,65 @@
+run:
+  timeout: 2m
+  skip-dirs:
+    - migrations
+    - out
+  skip-dirs-use-default: true
+  modules-download-mode: vendor
+  allow-parallel-runners: true
+
+linters-settings:
+  govet:
+    check-shadowing: true
+  gocyclo:
+    min-complexity: 20
+  maligned:
+    suggest-new: true
+  dupl:
+    threshold: 200
+  goconst:
+    min-len: 2
+    min-occurrences: 2
+  misspell:
+    locale: US
+  lll:
+    line-length: 140
+  gci:
+    local-prefixes: github.com/mathandcrypto/cryptomath-go-captcha
+  gocritic:
+    enabled-tags:
+      - performance
+      - style
+      - experimental
+    disabled-checks:
+      - wrapperFunc
+
+linters:
+  disable-all: true
+  enable:
+    - govet
+    - gocyclo
+    - dupl
+    - lll
+    - gosec
+    - dupl
+    - goconst
+    - depguard
+    - misspell
+    - gci
+    - gocritic
+    - govet
+    - staticcheck
+    - deadcode
+    - errcheck
+    - unused
+    - gosimple
+    - structcheck
+    - varcheck
+    - ineffassign
+    - typecheck
+    - bodyclose
+    - unconvert
+    - unparam
+    - prealloc
+    - whitespace
+    - exportloopref

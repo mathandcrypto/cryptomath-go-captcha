@@ -1,0 +1,11 @@
+output   = "internal/models"
+wipe     = true
+
+[psql]
+  dbname = "cryptomath-captcha"
+  host   = "127.0.0.1"
+  port   = 5432
+  user   = "cryptomath"
+  pass   = "cryptomath"
+  sslmode = "disable"
+  blacklist = ["schema_migrations"]
